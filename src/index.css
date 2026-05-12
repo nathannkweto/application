@@ -19,7 +19,7 @@
   letter-spacing: 0.18px;
   color-scheme: light dark;
   color: var(--text);
-  background: var(--bg);
+  background: whitesmoke;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -55,7 +55,6 @@ body {
 }
 
 #root {
-  width: 1126px;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -111,49 +110,110 @@ code {
 }
 
 .student-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px 24px;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.05),
+    0 12px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ececec;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 16px;
-  border-radius: 8px;
-  background: #f4f3ec;
-  box-shadow: var(--shadow);
+  gap: 24px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .student-card:hover {
-  background: #c084fc;
-  box-shadow: var(--accent-border) 0 0 0 1px, var(--shadow);
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.08),
+    0 18px 40px rgba(124, 58, 237, 0.12);
+
+  border-color: #c084fc;
 }
 
 .student-card-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
+  text-align: center;
+  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 18px;
 }
 
 .student-card-header h2 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #1a1a1a
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: 0.3px;
+}
+
+.student-card-header h3 {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #7c3aed;
+  background: #f3e8ff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.student-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .row {
   display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 14px;
+  border-radius: 10px;
+
+  background: #fafafa;
+  transition: background 0.2s ease;
+}
+
+.row:hover {
+  background: #f3f4f6;
 }
 
 .label {
-  display: inline-flex;
-  gap: 4px;
-  font-size: 14px;
-  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #6b7280;
+  min-width: 90px;
 }
 
 .value {
+  font-size: 0.95rem;
   font-weight: 500;
-  color: var(--text);
+  color: #111827;
+  text-align: right;
+  word-break: break-word;
+}
+
+@media (max-width: 480px) {
+  .student-card {
+    padding: 22px 18px;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .value {
+    text-align: left;
+  }
 }

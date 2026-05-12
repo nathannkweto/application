@@ -5,6 +5,7 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import { ButtonA, ButtonB } from './components/Buttons'
 import StudentCard from './components/StudentCard'
+import student from './data/student';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,11 +13,8 @@ function App() {
   return (
     <>
       <section id="center">
-        <StudentCard />
+          <StudentCard student={student}/>
       </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
     </>
   )
 }

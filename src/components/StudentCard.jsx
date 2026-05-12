@@ -1,6 +1,5 @@
 import React from 'react';
 import '../index.css';
-import student from '../data/student';
 
 function StudentCard({ student }) {
   return (
