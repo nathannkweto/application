@@ -3,17 +3,20 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-import { ButtonA, ButtonB } from './components/Buttons'
 import StudentCard from './components/StudentCard'
 import student from './data/student';
+import { Button } from '@mui/material'
+import Layout from './layout/Layout'
+import { Toolbar } from '@mui/material'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function App(children) {
   return (
     <>
       <section id="center">
-          <StudentCard student={student}/>
+        <Layout>
+          <Toolbar />
+          <StudentCard student={student} />
+        </Layout>
       </section>
     </>
   )
